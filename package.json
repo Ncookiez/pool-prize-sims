@@ -1,7 +1,8 @@
 {
-	"name": "sveltekit-pwa-template",
-	"version": "0.0.1",
+	"name": "pool-prize-sims",
+	"version": "0.1.0",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

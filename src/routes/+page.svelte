@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 
 	// Imports:
 	import { onMount } from 'svelte';
@@ -16,8 +16,8 @@
 
 <!-- SvelteKit Dynamic Header -->
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Home Page" />
+	<title>Prize Simulations</title>
+	<meta name="description" content="Simulate different prize distributions for PoolTogether V4!" />
 </svelte:head>
 
 <!-- Page Content -->

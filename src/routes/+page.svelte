@@ -27,6 +27,7 @@
 	// Reactive Results:
 	$: apr = (rate / 100 / 365) * tvl;
 	$: claimable = balancesFetched ? calcExpectedClaimable(distributions) : 0;
+	$: numPrizes = chains.map(chain => prizeCounts.map(countKey => distributions[chain][countKey] ? (countKey as number) : 0).reduce((a, b) => a + b, 0)).reduce((a, b) => a + b, 0);
 	$: dropped = chainTotalPrizeAmount - claimable;
 	$: subsidy = claimable - apr;
 	$: sustainableTVL = claimable / (rate / 100 / 365);
@@ -162,6 +163,10 @@
 			<div class="claimable">
 				<span>Claimable Prizes</span>
 				<span>${claimable.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
+			</div>
+			<div class="numPrizes">
+				<span>Prize Count</span>
+				<span>{numPrizes.toLocaleString()}</span>
 			</div>
 			<div class="dropped">
 				<span>Dropped Prizes</span>

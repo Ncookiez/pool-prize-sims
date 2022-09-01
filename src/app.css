@@ -33,6 +33,7 @@ html, body {
 	font-family: Averta;
 	color: #ffffff;
 	background-color: var(--primary-color);
+	overflow: hidden auto;
 }
 
 .hide {

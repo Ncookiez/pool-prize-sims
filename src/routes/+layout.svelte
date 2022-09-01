@@ -19,7 +19,10 @@
 <style>
 
 	main {
-		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 1em 1em 5em;
 	}
 
 </style>

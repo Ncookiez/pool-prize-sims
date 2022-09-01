@@ -30,12 +30,14 @@
 		height: 48px;
 		width: 100%;
 		color: rgba(255, 255, 255, 0.65);
-		background: #263238;
+		background: var(--dark-purple);
 		font-size: 60%;
 		font-weight: 800;
 		letter-spacing: 0.5px;
 		text-transform: uppercase;
-		border-top: 2px solid rgba(34,40,49,0.3);
+		box-shadow: 0 0 20px 2px black;
+		overflow: hidden;
+		z-index: 1;
 	}
 	
 	footer span a {

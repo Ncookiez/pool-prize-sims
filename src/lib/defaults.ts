@@ -19,6 +19,7 @@ export const defaultChain: Chain = 'eth';
 export const defaultDistributions: Record<Chain, PrizeDistribution> = {
   eth: {
     1: 1000,
+    2: undefined,
     4: undefined,
     8: 400,
     16: undefined,
@@ -34,6 +35,7 @@ export const defaultDistributions: Record<Chain, PrizeDistribution> = {
   },
   poly: {
     1: 1000,
+    2: undefined,
     4: 8,
     8: undefined,
     16: undefined,
@@ -49,6 +51,7 @@ export const defaultDistributions: Record<Chain, PrizeDistribution> = {
   },
   avax: {
     1: 1000,
+    2: undefined,
     4: undefined,
     8: undefined,
     16: undefined,
@@ -64,6 +67,7 @@ export const defaultDistributions: Record<Chain, PrizeDistribution> = {
   },
   op: {
     1: 1000,
+    2: undefined,
     4: undefined,
     8: undefined,
     16: undefined,

@@ -76,7 +76,17 @@
 
 	// Function to export distribution:
 	const exportDistribution = () => {
-		navigator.clipboard.writeText(JSON.stringify(distributions));
+		const copyDistributions: Record<Chain, PrizeDistribution> = JSON.parse(JSON.stringify(distributions));
+		chains.forEach(chain => {
+			const dist = copyDistributions[chain];
+			Object.keys(dist).forEach(stringKey => {
+				const key = parseInt(stringKey) as PrizeCount;
+				if(dist[key] === null) {
+					delete dist[key];
+				}
+			});
+		});
+		navigator.clipboard.writeText(JSON.stringify(copyDistributions));
 	}
 
 	onMount(async () => {
@@ -120,7 +130,7 @@
 		{#each prizeCounts as prizeCount}
 			<span class="tier">
 				<label for="prizeCount{prizeCount}">{prizeCount.toLocaleString()}:</label>
-				<span class="prizeInput" class:hiddenValue={distributions[chainSelected][prizeCount] === 0}>
+				<span class="prizeInput" class:hiddenValue={distributions[chainSelected][prizeCount] === null || distributions[chainSelected][prizeCount] === 0}>
 					{#if distributions[chainSelected][prizeCount] && distributions[chainSelected][prizeCount] !== 0}
 						<span>$</span>
 					{/if}

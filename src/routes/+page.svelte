@@ -116,11 +116,11 @@
 <!-- Distribution Inputs -->
 <section id="distInputs">
 	<h2>You must chooseth thy distribution!</h2>
-	<i id="import" class="icofont-download" title="Import Distribution (From Clipboard)" on:click={importDistribution} />
-	<i id="export" class="icofont-share-alt" title="Export Distribution (To Clipboard)" on:click={exportDistribution} />
+	<i id="import" class="icofont-download" title="Import Distribution (From Clipboard)" on:click={importDistribution} on:keydown={importDistribution} />
+	<i id="export" class="icofont-share-alt" title="Export Distribution (To Clipboard)" on:click={exportDistribution} on:keydown={exportDistribution} />
 	<div class="tabs">
 		{#each chains as chain}
-			<div class="chainTab {chain}" class:selected={chainSelected === chain} on:click={() => chainSelected = chain}>
+			<div class="chainTab {chain}" class:selected={chainSelected === chain} on:click={() => chainSelected = chain} on:keydown={() => chainSelected = chain}>
 				<img src="/images/{chain}.svg" alt="{chain}">
 			</div>
 		{/each}
